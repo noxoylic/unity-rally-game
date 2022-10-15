@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.5176471, g: 0.6627451, b: 0.8431373, a: 1}
+  m_FogColor: {r: 0.5176471, g: 0.70459116, b: 0.84313726, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.002
   m_LinearFogStart: 0
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 38978c1101352884fab43bdfcff2b456, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 6edb9d6b599c5a644bc52965e9d70cad, type: 2}
 --- !u!196 &4
 NavMeshSettings:
