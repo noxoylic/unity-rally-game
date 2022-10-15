@@ -11,6 +11,7 @@ Our solution to this is by making a game with realistic as possible car racing w
 
 ## Features ##
 - INTENSE GAMEPLAY
+- cars
 - realistic driving
   - drifing
    - steering
@@ -20,13 +21,13 @@ Our solution to this is by making a game with realistic as possible car racing w
 ## issues ##
 - cars may face some issues
 - lack of maps
- -multiplayer may be buggy
+ -multiplayer may be buggy - *will be buggy
 
 ## Coming soon ##
 - multiplayer
 - more cars
 - easter eggs
-- ai
+- ai - definetly not this
 - maps
 - fortite battle pass
 
