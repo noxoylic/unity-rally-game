@@ -167,10 +167,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1149025428}
-  maxLength: 0.3
-  springStriffness: 20000
+  springTravel: 0.3
+  springStriffness: 30000
+  damperStiffness: 3000
   wheelModel: {fileID: 0}
-  wheelRadius: 0.35
+  wheelRadius: 0.5
 --- !u!1 &742343450
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,10 +404,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1149025428}
-  maxLength: 0.3
-  springStriffness: 20000
+  springTravel: 0.3
+  springStriffness: 30000
+  damperStiffness: 3000
   wheelModel: {fileID: 0}
-  wheelRadius: 0.35
+  wheelRadius: 0.5
 --- !u!1 &1149025425
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,10 +754,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1149025428}
-  maxLength: 0.3
-  springStriffness: 20000
+  springTravel: 0.3
+  springStriffness: 30000
+  damperStiffness: 3000
   wheelModel: {fileID: 0}
-  wheelRadius: 0.35
+  wheelRadius: 0.5
 --- !u!1 &1790997553
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,10 +898,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1149025428}
-  maxLength: 0.3
-  springStriffness: 20000
+  springTravel: 0.3
+  springStriffness: 30000
+  damperStiffness: 3000
   wheelModel: {fileID: 0}
-  wheelRadius: 0.35
+  wheelRadius: 0.5
 --- !u!1 &2056913074
 GameObject:
   m_ObjectHideFlags: 0
