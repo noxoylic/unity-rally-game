@@ -10,25 +10,25 @@ we have noticed that in github and unity as a whole their are not many good real
 Our solution to this is by making a game with realistic as possible car racing while also making it fun and enhancing for all players.
 
 ## Features ##
--INTENSE GAMEPLAY
--realistic driving
-  -drifing
-   -steering
-   -gear boxes
+- INTENSE GAMEPLAY
+- realistic driving
+  - drifing
+   - steering
+   - gear boxes
   
   
 ## issues ##
--cars may face some issues
--lack of maps
--multiplayer may be buggy
+- cars may face some issues
+- lack of maps
+ -multiplayer may be buggy
 
 ## Coming soon ##
--multiplayer
--more cars
--easter eggs
--ai
--maps
--fortite battle pass
+- multiplayer
+- more cars
+- easter eggs
+- ai
+- maps
+- fortite battle pass
 
 we are looking for your input and comments!
 
