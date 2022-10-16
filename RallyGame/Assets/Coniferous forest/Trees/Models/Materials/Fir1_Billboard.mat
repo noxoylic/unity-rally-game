@@ -16,10 +16,18 @@ Material:
   m_CustomRenderQueue: 2450
   stringTagMap:
     RenderType: TransparentCutout
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - DistortionVectors
+  - TransparentDepthPrepass
+  - TransparentDepthPostpass
+  - TransparentBackface
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Albedo:
+        m_Texture: {fileID: 2800000, guid: ea02296437b72074f8fbdfeb1032cf6e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 2800000, guid: ea02296437b72074f8fbdfeb1032cf6e, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -52,7 +60,15 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: d8d27b5ba17b0d04fac6c921e175813b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PackedMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -61,6 +77,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ThicknessMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -78,38 +98,81 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 1
+    - _AlphaTest: 1
+    - _AlphaTestThreshold: 0.5
+    - _BakedMeshData: 0
     - _Blend: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColorCorrection: 0
+    - _ColorVariationSpread: 0.2
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _DoubleSidedMode: 2
+    - _DoubleSidedNormalMode: 1
     - _DstBlend: 0
+    - _EmissionIntensity: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _LightingQuality: 0
+    - _LinkMapTilingOffset: 1
     - _Metallic: 0
     - _Mode: 2
+    - _MotionVectors: 1
+    - _NormalMapScale: 1
+    - _ObjectHeight: 0.5
+    - _ObjectRadius: 0.5
     - _OcclusionStrength: 1
+    - _Overlay: 0
     - _Parallax: 0.02
     - _QueueOffset: 0
+    - _RecalculateWindNormals: 0.5
     - _ReceiveShadows: 1
+    - _SampleAlphaOverlay: 1
+    - _SampleColorOverlay: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _SurfaceMapMethod: 1
+    - _TemporalAntiAliasing: 0
+    - _Translucency: 0
+    - _TranslucencyAmbient: 0.5
+    - _TranslucencyBlendMode: 0
+    - _TranslucencyDistortion: 0.5
+    - _TranslucencyScattering: 2
+    - _TranslucencyShadow: 0.8
+    - _TranslucencyStrength: 1
+    - _TurbulenceStrength: 1
     - _UVSec: 0
+    - _VertexNormalStrength: 1
+    - _Wind: 1
+    - _WindStrength: 1
+    - _WindVariation: 0.3
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FloatingOriginOffset_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _GlossRemap: {r: 0, g: 0, b: 0, a: 0}
+    - _HSL: {r: 0.02, g: 0.05, b: 0.1, a: 0}
+    - _HSLVariation: {r: -0.02, g: -0.05, b: -0.1, a: 0}
+    - _OcclusionRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 1}
+    - _TintVariation: {r: 1, g: 1, b: 1, a: 1}
+    - _TranslucencyColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TrunkBendFactor: {r: 1, g: 0, b: 0, a: 0}
+    - _WindFade: {r: 50, g: 20, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7129989205356162568
 MonoBehaviour:
