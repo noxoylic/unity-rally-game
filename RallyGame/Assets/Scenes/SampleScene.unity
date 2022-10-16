@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 1258070969}
   - component: {fileID: 1258070968}
   - component: {fileID: 1258070967}
+  - component: {fileID: 1258070970}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
@@ -223,7 +224,7 @@ Terrain:
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 80
+  m_DetailObjectDistance: 0
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
@@ -256,6 +257,42 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258070970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258070966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1448045563, guid: b04c77e0938d27643b3f69f2dd39ce77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _draw: 1
+  _renderProcessorLimit: 0.75
+  _stream: 1
+  _streamPrioritizeView: 1
+  _streamProcessorLimit: 0.25
+  _streamInDistance: 50
+  _streamOutDistance: 100
+  _detailDistance: 80
+  _reduceDensity: {x: 30, y: 100}
+  _reduceDensityAmount: 0.5
+  _ditherScale: 10
+  _billboardGrassMaterial: {fileID: 0}
+  _grassTextureShadowCasting: 2
+  _grassMeshNormalMode: 0
+  _splitShadows: 1
+  _proceduralInstancing: 1
+  _drawCells: 0
+  _shadowDistance: 40
+  _boostRenderingQuality: 1
+  _overrideRenderQueue: 1
+  _specularHighlights: 1
+  _translucency: 1
+  _renderReflectionProbes: 0
+  _autoRefreshTerrainAtRuntime: 1
 --- !u!1 &1687258581
 GameObject:
   m_ObjectHideFlags: 0
