@@ -67,10 +67,13 @@ LODGroup:
     fadeTransitionWidth: 0.99
     renderers:
     - renderer: {fileID: 23702910655172052}
-  - screenRelativeHeight: 0
+  - screenRelativeHeight: 0.083541885
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23345520621568140}
+  - screenRelativeHeight: 0
+    fadeTransitionWidth: 0
+    renderers: []
   m_Enabled: 1
 --- !u!136 &136036649027631188
 CapsuleCollider:
