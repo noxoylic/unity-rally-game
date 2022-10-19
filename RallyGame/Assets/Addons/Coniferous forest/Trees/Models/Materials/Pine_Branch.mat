@@ -22,8 +22,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Pine_Branch
   m_Shader: {fileID: 4800000, guid: c06c91c9416ad0f4e8a67d6103e77fdc, type: 3}
-  m_ShaderKeywords: _ALPHATEST _BAKEDMESHDATA_OFF _COLOR_TINT _INTERACTION_OFF _LIGHTING_QUALITY_HIGH
-    _LINKMAPTILINGOFFSET_ON _NORMALMAP _OVERLAY_OFF _WIND
+  m_ShaderKeywords: _ALPHATEST _COLOR_TINT _INTERACTION_OFF _LIGHTING_QUALITY_HIGH
+    _NORMALMAP _WIND
   m_LightmapFlags: 6
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 1
@@ -124,7 +124,7 @@ Material:
     m_Floats:
     - _AlphaClip: 1
     - _AlphaTest: 1
-    - _AlphaTestThreshold: 0.45
+    - _AlphaTestThreshold: 0.522
     - _BakedMeshData: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -207,8 +207,8 @@ Material:
     - _OcclusionRemap: {r: 0, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _Tint: {r: 1, g: 1, b: 1, a: 1}
-    - _TintVariation: {r: 1, g: 1, b: 1, a: 1}
+    - _Tint: {r: 0.9339623, g: 0.7565793, b: 0.5066305, a: 1}
+    - _TintVariation: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
     - _TranslucencyColor: {r: 1, g: 1, b: 1, a: 1}
     - _TrunkBendFactor: {r: 1, g: 0, b: 0, a: 0}
     - _WindFade: {r: 50, g: 20, b: 0, a: 0}
