@@ -17,7 +17,6 @@ Our solution to this is by making a game with realistic as possible car racing w
    - steering
    - gear boxes
   
-  
 ## issues ##
 - cars may face some issues
 - lack of maps
