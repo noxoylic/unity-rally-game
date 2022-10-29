@@ -32,6 +32,15 @@ Our solution to this is by making a game with realistic as possible car racing w
 
 we are looking for your input and comments!
 
+## updates ##
+*20/10/22*
+- slightly broken car
+- one map
+- lots of textured models tho
+- second map in dev
+
 *terms and conditions apply*
+
+
 
 
