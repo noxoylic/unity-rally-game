@@ -10,6 +10,8 @@ public class CarController : MonoBehaviour
     public Wheel driveWheelRight;
     public Wheel driveWheelLeft;
 
+    public float mph;
+
     [Header("Divechain Variables")]
     public AnimationCurve engineCurve;
     public float differential;
@@ -32,6 +34,8 @@ public class CarController : MonoBehaviour
     {
         enginePower();
         inputs();
+
+        mph = rb.velocity.magnitude * 3.6f;
     }
 
     void FixedUpdate()
@@ -49,6 +53,10 @@ public class CarController : MonoBehaviour
         if(x > 0)
         {
             driveTorque = engineCurve.Evaluate(rpm) * gear[i] * differential * transmissionEfficiency * x;
+        }
+        else
+        {
+            driveTorque = 0;
         }
     }
 

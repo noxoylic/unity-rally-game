@@ -828,7 +828,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   rollingResistance: 12.8
-  brakeForce: 3000
+  brakeForce: 5000
+  frontResultantForce: 0
+  rearResultantForce: 0
   brakeTorque: 0
   slipRatio: 0
   angularVelocity: 0
@@ -1752,6 +1754,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   rollingResistance: 12.8
   brakeForce: 3000
+  frontResultantForce: 0
+  rearResultantForce: 0
   brakeTorque: 0
   slipRatio: 0
   angularVelocity: 0
@@ -2261,6 +2265,7 @@ MonoBehaviour:
   forcePoint: {fileID: 714200381}
   driveWheelRight: {fileID: 2013773302}
   driveWheelLeft: {fileID: 352111831}
+  mph: 0
   engineCurve:
     serializedVersion: 2
     m_Curve:
@@ -3263,6 +3268,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   rollingResistance: 12.8
   brakeForce: 3000
+  frontResultantForce: 0
+  rearResultantForce: 0
   brakeTorque: 0
   slipRatio: 0
   angularVelocity: 0
@@ -3888,6 +3895,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   rollingResistance: 12.8
   brakeForce: 3000
+  frontResultantForce: 0
+  rearResultantForce: 0
   brakeTorque: 0
   slipRatio: 0
   angularVelocity: 0

@@ -17,6 +17,9 @@ public class Wheel : MonoBehaviour
     public float rollingResistance;
     public float brakeForce;
 
+    public float frontResultantForce;
+    public float rearResultantForce;
+
     public float brakeTorque;
     public float slipRatio;
     private float weightOnWheel;
@@ -49,7 +52,13 @@ public class Wheel : MonoBehaviour
 
     void Update()
     {
-        //spin wheel model
+        //spin wheel
+        calculateSlipRatio();
+
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, springTravel + wheelRadius))
+        {
+            calculateForces(hit);
+        }
     }
 
     void FixedUpdate()
@@ -57,9 +66,7 @@ public class Wheel : MonoBehaviour
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, springTravel + wheelRadius))
         {
             suspension(hit);
-            calculateWeight(hit);
             applyForces(hit);
-            calcualteSlipRatio();
         }
     }
 
@@ -75,12 +82,12 @@ public class Wheel : MonoBehaviour
         rb.AddForceAtPosition(suspensionForce, transform.position);
     }
 
-    void applyForces(RaycastHit hit)
+    void calculateForces(RaycastHit hit)
     {
         wheelVelocity = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point));
         Vector3 rollingDrag = -rollingResistance * wheelVelocity;
 
-        if(Input.GetAxis("Vertical") < 0)
+        if(Input.GetAxis("Vertical") < 0 && rb.velocity.magnitude > 0.1)
         {
             brakeTorque = brakeForce * wheelRadius * Input.GetAxis("Vertical");
         }
@@ -93,50 +100,68 @@ public class Wheel : MonoBehaviour
         {
             if (isFront) 
             {
+                float springPercentage = hit.distance / (springTravel + wheelRadius);
                 float finalTorque = controller.driveTorque - brakeTorque; 
                 angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 2);
-                rb.AddForceAtPosition(slipCurve.Evaluate(slipRatio) / 2 * transform.forward, hit.point);
+                frontResultantForce = slipCurve.Evaluate(slipRatio) / springPercentage;
             }
             else 
             {
+                float springPercentage = hit.distance / (springTravel + wheelRadius);
                 float finalTorque = -brakeTorque;
                 angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 2);
-                // add brake torque
+                rearResultantForce = slipCurve.Evaluate(slipRatio) / springPercentage;
             }
-            //front wheel drive
         }
         else if(rwd)
         {
             if (!isFront)
             {
+                float springPercentage = hit.distance / (springTravel + wheelRadius);
                 float finalTorque = - brakeTorque;
                 angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 2);
-                rb.AddForceAtPosition(slipCurve.Evaluate(slipRatio) * transform.forward, hit.point);
+                rearResultantForce = slipCurve.Evaluate(slipRatio) / springPercentage;
             }
             else
             {
+                float springPercentage = hit.distance / (springTravel + wheelRadius);
                 float finalTorque = controller.driveTorque - brakeTorque;
                 angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 2);
-                //add brake torque
+                frontResultantForce = slipCurve.Evaluate(slipRatio) / springPercentage;
             }
-            //rear wheel dirve
         }
         else if(awd)
         {
-            float finalTorque = controller.driveTorque - brakeTorque;
-            angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 4);
-            rb.AddForceAtPosition(slipCurve.Evaluate(slipRatio) * transform.forward / 4, hit.point);
+            float springPercentage = hit.distance / (springTravel + wheelRadius);
+            float finalTorque = controller.driveTorque + brakeTorque;
+            angularVelocity = finalTorque / (wheelMass * wheelRadius * wheelRadius / 2);
+            frontResultantForce = (slipCurve.Evaluate(slipRatio) / 4) / springPercentage;
+            rearResultantForce = (slipCurve.Evaluate(slipRatio) / 4) / springPercentage;
         }
     }
 
-    void calculateWeight(RaycastHit hit)
+    void applyForces(RaycastHit hit)
     {
-        float springPercentage = hit.distance / (springTravel + wheelRadius);
-        weightOnWheel = (rb.mass / springPercentage) / 4;
+        if (isFront)
+        {
+            rb.AddForceAtPosition(frontResultantForce * transform.forward, hit.point);
+        }
+
+        if (!isFront)
+        {
+            rb.AddForceAtPosition(rearResultantForce * transform.forward, hit.point);
+        }
     }
 
-    void calcualteSlipRatio()
+    void calculateSlipRatio()
     {
-        slipRatio = ((angularVelocity * wheelRadius) / wheelVelocity.magnitude);
+        if (Input.GetAxis("Vertical") == -1)
+        {
+            slipRatio = -6;
+        }
+        else
+        {
+            slipRatio = (angularVelocity * wheelRadius) / rb.velocity.magnitude;
+        }
     }
 }
